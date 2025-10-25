@@ -19,20 +19,21 @@
       cursor: none;
     }
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0f1419; /* fallback background */
+   body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0f1419; /* base dark color */
   background-image:
-    linear-gradient(to right, #444 1px, transparent 1px),
-    linear-gradient(to bottom, #444 1px, transparent 1px);
-  background-size: 40px 40px;
+    linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 60px 60px; /* bigger squares → fewer boxes */
   color: var(--text-primary);
-      max-width: 750px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.7;
-      transition: all 0.3s ease;
-    }
+  max-width: 750px;
+  margin: 60px auto;
+  padding: 0 20px;
+  line-height: 1.7;
+  transition: all 0.3s ease;
+}
+
 
     h1 {
   font-size: 2.3rem;
@@ -266,7 +267,7 @@ canvas#bgCanvas {
 
   <div class="section-title">about me</div>
   <ul>
-    <li>• Founded and scaled three independent ventures in Digital Recovery, Identity Facilitation, and Creator Management.<br>Operated lean teams, solved high-friction problems, and drove consistent profitability.</li>
+    <li>• Founded and scaled three independent ventures in Digital Recovery, Identity Facilitation, and Creator Management. Operated lean teams, solved high-friction problems, and drove consistent profitability.</li>
     <li>• Broke an unofficial world record in combat sports.<br>• Winner in various local sport tournaments; actively train in boxing and weightlifting.</li>
     <li>• Self-taught in sports science, biomechanics, and performance nutrition (preparing for official certification).</li>
     <li>• Donated personal earnings to animal welfare, food access, and education for underprivileged children.</li>
