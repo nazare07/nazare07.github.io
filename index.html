@@ -108,6 +108,19 @@
       text-shadow: var(--accent-glow);
     }
 
+      /* About me list items glow on hover */
+#contentWrapper ul li {
+  transition: all 0.3s ease;
+  color: var(--text-primary); /* default text color */
+}
+
+#contentWrapper ul li:hover {
+  color: var(--accent); /* bright blue glow */
+  text-shadow: 0 0 8px var(--accent), 0 0 16px var(--accent), 0 0 24px var(--accent);
+  cursor: pointer;
+}
+
+
     footer {
       color: var(--text-secondary);
       font-size: 0.9rem;
