@@ -217,8 +217,22 @@ a:hover {
   color: #66d4ff;
   text-shadow: 0 0 8px rgba(0,186,255,0.6);
 }
-  
-  </style>
+
+body {
+  background: transparent;
+}
+
+#contentWrapper {
+  position: relative;
+  z-index: 1;
+}
+
+canvas#bgCanvas {
+  z-index: 0;
+}
+
+      
+</style>
 </head>
 
 <body>
@@ -416,6 +430,57 @@ a:hover {
     document.addEventListener('mousemove', e => {
       cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     });
+ </div>
+    <script>
+  const canvas = document.getElementById('bgCanvas');
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+  const particles = [];
+
+  window.addEventListener('resize', () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+
+  class Particle {
+    constructor(){
+      this.x = Math.random()*w;
+      this.y = Math.random()*h;
+      this.r = Math.random()*2 + 1;
+      this.vx = (Math.random()*2 -1)*0.3;
+      this.vy = (Math.random()*2 -1)*0.3;
+      this.alpha = Math.random()*0.5 + 0.1;
+    }
+    draw(){
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.r, 0, Math.PI*2, false);
+      ctx.fillStyle = `rgba(255,255,255,${this.alpha})`;
+      ctx.fill();
+    }
+    update(){
+      this.x += this.vx;
+      this.y += this.vy;
+      if(this.x < 0 || this.x > w) this.vx *= -1;
+      if(this.y < 0 || this.y > h) this.vy *= -1;
+      this.draw();
+    }
+  }
+
+  for(let i=0; i<100; i++){
+    particles.push(new Particle());
+  }
+
+  function animate(){
+    ctx.clearRect(0,0,w,h);
+    for(let p of particles) {
+      p.update();
+    }
+    requestAnimationFrame(animate);
+  }
+  animate();
+</script>
+
   </script>
 </body>
 </html>
