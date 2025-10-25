@@ -6,90 +6,149 @@
   <title>Sankalp Sinha</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
   <style>
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #ffffff;
+    color: #111;
+    max-width: 750px;
+    margin: 60px auto;
+    padding: 0 20px;
+    line-height: 1.7;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.3rem;
+  }
+
+  p.subtitle {
+    color: #555;
+    font-size: 1.05rem;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+  }
+
+  .links a {
+    margin-right: 18px;
+    color: #0070f3;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s ease, transform 0.2s ease;
+  }
+
+  .links a:hover {
+    color: #0050c3;
+    transform: translateY(-1px);
+  }
+
+  .section-title {
+    margin-top: 2.5rem;
+    font-weight: 600;
+    font-size: 1.15rem;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.4rem;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  li {
+    margin: 0.7rem 0;
+  }
+
+  ul li a {
+    color: #0070f3;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  ul li a:hover {
+    color: #0050c3;
+    text-decoration: underline;
+  }
+
+  footer {
+    color: #777;
+    font-size: 0.9rem;
+    margin-top: 4rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+  }
+
+  /* --- Modal Styles --- */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.4);
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  .modal-content {
+    background-color: #fff;
+    margin: 7% auto;
+    padding: 25px;
+    border-radius: 14px;
+    max-width: 620px;
+    position: relative;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15);
+    animation: slideUp 0.25s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; } 
+    to { opacity: 1; }
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(25px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+  .close {
+    color: #999;
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .close:hover {
+    color: #111;
+  }
+
+  @media (max-width: 600px) {
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #111;
-      max-width: 700px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.6;
+      margin: 40px auto;
+      padding: 0 16px;
     }
     h1 {
-      font-size: 2rem;
-      font-weight: 700;
-      margin-bottom: 0.3rem;
-    }
-    p.subtitle {
-      color: #555;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
-    }
-    a {
-      color: #0070f3;
-      text-decoration: none;
-      font-weight: 500;
-      cursor: pointer;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .links a {
-      margin-right: 15px;
-    }
-    .section-title {
-      margin-top: 2rem;
-      font-weight: 600;
-      font-size: 1.1rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 0.3rem;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    li {
-      margin: 0.5rem 0;
-    }
-    footer {
-      color: #777;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-    }
-
-    /* Modal Styles */
-    .modal {
-      display: none; 
-      position: fixed; 
-      z-index: 1000; 
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto; 
-      background-color: rgba(0,0,0,0.6); 
+      font-size: 1.8rem;
     }
     .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
+      margin-top: 25%;
       padding: 20px;
-      border-radius: 10px;
-      max-width: 600px;
-      position: relative;
     }
-    .close {
-      color: #aaa;
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      font-size: 28px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    .close:hover {
-      color: #000;
-    }
-  </style>
+  }
+</style>
+
 </head>
 <body>
   <h1>Sankalp Sinha</h1>
