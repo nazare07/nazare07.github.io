@@ -8,15 +8,12 @@
   <style>
     /* ====== Global Theme ====== */
     :root {
-      --bg: #0e0e10;
-      --surface: #1a1a1d;
-      --text-primary: #f2f2f2;
-      --text-secondary: #999;
-      --accent: #00baff;
-      --accent-glow: 0 0 8px rgba(0,186,255,0.8);
-      --border: rgba(255,255,255,0.08);
-    }
-
+  --bg: #2b2b2b; /* grey background */
+  --surface: #3a3a3a;
+  --text-primary: #f2f2f2;
+  --text-secondary: #b0b0b0;
+  --accent: #00baff;
+  --border: rgba(255,255,255,0.1);
     * {
       box-sizing: border-box;
       cursor: none;
@@ -34,14 +31,13 @@
     }
 
     h1 {
-      font-size: 2.3rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 0.3rem;
-      background: linear-gradient(90deg, #00baff, #ffffff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.3rem;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255,255,255,0.3);
+}
 
     p.subtitle {
       color: var(--text-secondary);
@@ -76,15 +72,20 @@
     }
 
     .section-title {
-      margin-top: 2.5rem;
-      font-weight: 600;
-      font-size: 1.15rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.4rem;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+  margin-top: 2.5rem;
+  font-weight: 600;
+  font-size: 1.15rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+}
+
+      .section-title.glow {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.7), 0 0 25px rgba(255,255,255,0.4);
+}
 
     ul {
       list-style: none;
