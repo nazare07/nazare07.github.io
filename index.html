@@ -29,6 +29,7 @@
       color: #0070f3;
       text-decoration: none;
       font-weight: 500;
+      cursor: pointer;
     }
     a:hover {
       text-decoration: underline;
@@ -55,6 +56,39 @@
       font-size: 0.9rem;
       margin-top: 3rem;
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1000; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.6); 
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      position: relative;
+    }
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .close:hover {
+      color: #000;
+    }
   </style>
 </head>
 <body>
@@ -67,33 +101,70 @@
     <a href="https://www.linkedin.com/in/sankalp-sinha-930998370/" target="_blank">LinkedIn</a>
     <a href="https://medium.com/@mercenary_pen" target="_blank">Medium</a>
     <a href="mailto:sankalpsinha47@gmail.com">Email</a>
-
   </div>
 
- <div class="section-title">about me</div>
-<ul>
-  <li>• Founded and scaled three independent ventures in Digital Recovery, Identity Facilitation, and Creator Management. Operated lean teams, solved high-friction problems, and drove consistent profitability.</li>
-  <li>• Broke an unofficial world record in combat sports.<br>
-  • Winner in various local sport tournaments; actively train in boxing and weightlifting.</li>
-  <li>• Self-taught in sports science, biomechanics, and performance nutrition (preparing for official certification).</li>
-  <li>• Donated personal earnings to animal welfare, food access, and education for underprivileged children.</li>
-  <li>• I run a writing-focused page on 'Medium', posting original, philosophical content. Writing has been my lifelong passion and i'm currently working on publishing my own book.</li>
-  <li>• Currently preparing for the CFA (Charted Financial Analyst) professional certification, learning investment management, financial analysis, and portfolio strategy.</li>
-</ul>
+  <div class="section-title">About Me</div>
+  <ul>
+    <li>• Founded and scaled three independent ventures in Digital Recovery, Identity Facilitation, and Creator Management.<br>Operated lean teams, solved high-friction problems, and drove consistent profitability.</li>
+    <li>• Broke an unofficial world record in combat sports.<br>• Winner in various local sport tournaments; actively train in boxing and weightlifting.</li>
+    <li>• Self-taught in sports science, biomechanics, and performance nutrition (preparing for official certification).</li>
+    <li>• Donated personal earnings to animal welfare, food access, and education for underprivileged children.</li>
+    <li>• I run a writing-focused page on 'Medium', posting original, philosophical content. Writing has been my lifelong passion and I'm currently working on publishing my own book.</li>
+    <li>• Currently preparing for the CFA (Charted Financial Analyst) professional certification, learning investment management, financial analysis, and portfolio strategy.</li>
+  </ul>
 
-<p>I seek knowledge in any field I’m uninformed about. I don’t hesitate to explore new areas, especially where the gap matters.</p>
-
+  <p>I seek knowledge in any field I’m uninformed about. I don’t hesitate to explore new areas, especially where the gap matters.</p>
 
   <div class="section-title">Projects</div>
   <ul>
-    <li><a href="#">VelvetWave - Creator Revenue & Fan Interaction Studio</a></li>
-    <li><a href="#">Freelance Consultant for Government Document Services</a></li>
-    <li><a href="#">Terabytes (Independent Digital Services Business)</a></li>
+    <li><a onclick="openModal('modal1')">VelvetWave - Creator Revenue & Fan Interaction Studio</a></li>
+    <li><a onclick="openModal('modal2')">Freelance Consultant for Government Document Services</a></li>
+    <li><a onclick="openModal('modal3')">Terabytes (Independent Digital Services Business)</a></li>
   </ul>
 
-  <div class="section-title">Contact</div>
-  <p>Want to collaborate or discuss ideas? Reach out via <a href="mailto:your@email.com">email</a>.</p>
+  <!-- Modal Popups -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h3>VelvetWave</h3>
+      <p>This project was a creator revenue & fan interaction studio. We built systems for creators to monetize content, manage fans efficiently, and optimize engagement.</p>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h3>Freelance Consultant</h3>
+      <p>Consulted for government document services to streamline processes, reduce friction, and improve client experience using digital tools.</p>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h3>Terabytes</h3>
+      <p>Independent digital services business providing multiple online solutions, including content management, client onboarding, and digital optimization.</p>
+    </div>
+  </div>
 
   <footer>© 2025 Sankalp Sinha</footer>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    // Close modal when clicking outside content
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
